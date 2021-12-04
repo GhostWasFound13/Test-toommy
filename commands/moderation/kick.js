@@ -1,5 +1,4 @@
-How to make No Reason at making moderator commands
-bot.command({
+module.exports = ({
  name: "kick",
  desc: "kick a user",
  cat: "moderator",
@@ -8,23 +7,23 @@ bot.command({
 $kick[$mentioned[1]]
 $if[$message[2]==]
 $author[| $username[$mentioned[1]];$userAvatar[$mentioned[1]]]
-$description[
+$description[1;
 **$usertag[$mentioned[1]] has been kicked**
 $addField[Reason;No Reason]
 ]
-$color[RANDOM]
+$color[1;RANDOM]
 $sendDM[$mentioned[1];You has been kicked from **$serverName** for: No Reason]
 $endif
 
 $if[$message[2]==$message[2]]
 $author[| $username[$mentioned[1]];$userAvatar[$mentioned[1]]]
-$description[
+$description[1;
 **$usertag[$mentioned[1]] has been kicked**
-$addField[Reason;$noMentionMessage]
+$addField[1;Reason;$noMentionMessage]
 ]
-$color[RANDOM]
+$color[1;RNDOM]
 $sendDM[$mentioned[1];You has been kicked from **$serverName** for: $noMentionMessage]
-$endif
+$endif`
 }) 
 
-ping me on #aoijsv4-support if u have any problem
+ 
