@@ -1,6 +1,6 @@
 module.exports = {
     Bot: {
-        token: process.env.token,
+        token: process.env.tommy,
         prefix: "$getServerVar[prefix]",
         intents: "all",
         database: {
@@ -12,7 +12,7 @@ module.exports = {
         respondOnEdit: {
             commands: true
         },
-        suppressAllErrors: true,
+        suppressAllErrors: false,
         errorMessage: ["", "{newEmbed:{title:An Error has occured}{description:Something went wrong}{color:#FB4413}}", "{actionRow:{button:Support Server:5:https\\://discord.gg/5QvnaCutrC}}"]
     }
 }

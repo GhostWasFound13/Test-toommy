@@ -37,7 +37,12 @@ require('./handler/DistubeEvents')(bot)
 require('./handler/status')(bot)
 
 require('./handler/functions')(bot)
+//require("./handler/pathToHandlerFile.js"); not working
+//onst loadFunction = require("pathToHandlerFile");
 
+/* ... */
+
+//loadFunction(bot, "pathToFunctionDir"); 
 // :/
 
 bot.onJoin()
@@ -72,5 +77,17 @@ app.listen(3000, async () => {
 const files = fs.readdirSync('./events').filter(file => file.endsWith('.js'))
 files.forEach( x => {
 require(`./events/${x}`)(bot)
-});
+});{
+}
 
+
+const lavalink = new aoijs.Lavalink(bot);
+
+Lavalink.addNode({
+ url: "lava.link:80",
+ password: "neo",
+ name: "aoi.js",
+ secure: false,
+ }) 
+
+const voice = new aoijs.Voice(bot)

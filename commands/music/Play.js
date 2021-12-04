@@ -1,5 +1,5 @@
 module.exports = {
-    name: "play",
+    name: "dev-play",
     aliases: 'p',
     usage: "play [song name/URL]",
     description: "Plays the given song",

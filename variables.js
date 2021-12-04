@@ -36,4 +36,9 @@ module.exports = {
  hm:"0",
   mid: "",
   automeme: "", 
+  Blacklist: "false",
+  symbol: "⦿",
+  gif: "https://images-ext-1.discordapp.net/external/f90RV3-v6MIQNOlk_w_6zgAnHu58zPYbxnSvALDKKNo/https/media.discordapp.net/attachments/857171678219337728/857171720514568242/image0.gif",
+  color: "00000",
+  chatbot: "",
 }
