@@ -81,13 +81,12 @@ require(`./events/${x}`)(bot)
 }
 
 
-const lavalink = new aoijs.Lavalink(bot);
+const voice = new aoijs.Voice (bot)
 
+const Lavalink = new aoijs.Lavalink(bot);
 Lavalink.addNode({
  url: "lava.link:80",
  password: "neo",
  name: "aoi.js",
  secure: false,
- }) 
-
-const voice = new aoijs.Voice(bot)
+ })
