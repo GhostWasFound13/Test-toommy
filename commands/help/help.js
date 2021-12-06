@@ -2,8 +2,9 @@ module.exports = {
 name: "help",
 code: `$title[1;help menu]
 $description[1; here all help menu command]
-$addField[1;press the button economy;to see all economy command]
-$addField[1;press image button;working in progress on beta version]
+$addField[1;a!help economy;to see all economy command]
+$addField[1;a!help image;working in progress on beta version]
+$addField[1;a!help fun;to see all fun command]
 $footer[1; what you need $username;$userAvatar]
 $color[1;RANDOM]
 $thumbnail[1;$userAvatar]

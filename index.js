@@ -48,6 +48,7 @@ require('./handler/functions')(bot)
 bot.onJoin()
 bot.onMessage()
 bot.onInteractionCreate()
+bot.onMessageDelete();
 
 
 const loader = new Aoijs.LoadCommands(bot);

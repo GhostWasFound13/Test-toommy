@@ -39,6 +39,11 @@ module.exports = {
   Blacklist: "false",
   symbol: "⦿",
   gif: "https://images-ext-1.discordapp.net/external/f90RV3-v6MIQNOlk_w_6zgAnHu58zPYbxnSvALDKKNo/https/media.discordapp.net/attachments/857171678219337728/857171720514568242/image0.gif",
-  color: "00000",
   chatbot: "",
+  botinvite: "https://discord.com/api/oauth2/authorize?client_id=886888519799291914&permissions=8&scope=bot",
+  snipe_author: "",
+ snipe_msg: "", 
+ snipe_t: "",
+ snipe_channel: "",
+ color: "#FFF400"
 }
