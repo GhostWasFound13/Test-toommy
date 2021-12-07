@@ -57,17 +57,22 @@ await loader.load(bot.cmd, "./commands/")
 })()
 
 loader.setColors( loader.themes.default );
-
-const express = require('express')
+//server host
+const keepAlive = require('./server.js')
+const express = require('express');
 const app = express();
 
-app.get("/", async(req,res) => {
-  res.send('lol no need node 17.1.0')
-})
+app.get('/', (req, res) => {
+	res.sendFile('invite.html', {root: __dirname })
+});
 
-app.listen(3000, async () => {
-  console.log('bot on')
-})
+app.get('/invite', (req, res) => {
+	res.sendFile('server.html', {root: __dirname })
+});
+
+app.listen(3000, () => {
+	console.log('Server started');
+});
 
 //role Commands
  

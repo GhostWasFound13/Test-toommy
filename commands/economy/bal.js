@@ -17,5 +17,5 @@ $$numberSeparator[$getGlobalUserVar[Bank;$mentioned[1;yes]]]
 ]
 
 
-$footer[1;your balance's money]`
+$footer[1;$randomText[you are a rich ;if you want to get more dogge coin say a!mining;if you want sell diamond say a!selldiamond;dont be sus;sussy baka;lol]]`
 }
