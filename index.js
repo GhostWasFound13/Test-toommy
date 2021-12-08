@@ -96,3 +96,29 @@ Lavalink.addNode({
  name: "aoi.js",
  secure: false,
  })
+
+  //BOT JOIN lEAVE SERVER LOGGER
+
+bot.guildJoinCommand({
+channel: "918029927423565864",
+code: `
+$title[1;I joined a New server!]
+$addField[1;Guild Name#COLON#;$guildName;yes] 
+$addField[1;Member Count#COLON#;$memberscount;yes]
+$addField[1;Guild ID#COLON#;$guildID;yes]
+$addField[1;Guild Owner#COLON#;$userTag[$ownerID];yes]
+$color[1;RANDOM]`
+})
+bot.onGuildJoin()
+
+bot.guildLeaveCommand({
+channel: "918030061540638771",
+code: `
+$title[1;I was Removed from server]
+$addField[1;Guild Name#COLON#;$guildName;yes]
+$addField[1;Member Count#COLON#;$memberscount;yes]
+$addField[1;Guild ID#COLON#;$guildID;yes]
+$addField[1;Guild Owner#COLON#;$userTag[$ownerID];yes]
+$color[1;RANDOM]`
+})
+bot.onGuildLeave() 
