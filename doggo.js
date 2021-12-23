@@ -1,5 +1,6 @@
 const Aoijs = require('aoi.js');
 const fs = require('fs');
+const { Bot,LoadCommands,Voice } = require('aoi.js');
 const config = require('./config.js');
 const bot = new Aoijs.Bot(config.Bot);
 
@@ -87,7 +88,10 @@ require(`./events/${x}`)(bot)
 }
 
 
-const voice = new aoijs.Voice (bot)
+const voice = new Voice(bot);
+
+////Handlers™
+Handler({ bot,loader,voice });
 
 const Lavalink = new aoijs.Lavalink(bot);
 Lavalink.addNode({
@@ -122,3 +126,90 @@ $addField[1;Guild Owner#COLON#;$userTag[$ownerID];yes]
 $color[1;RANDOM]`
 })
 bot.onGuildLeave() 
+
+bot.customFunctions = {
+     djs : new bot.cacheManager.Group() ,
+     'aoi.js' : new bot.cacheManager.Group() 
+}
+
+//tired of using $findUser?
+
+//i got you
+
+
+
+bot.functionManager.createCustomFunction({
+  name: "$dogTitle",
+  type: "djs",
+    params: ['index'],
+  code:`const {code} = d.command
+    const inside = d.unpack()
+    const err = d.inside(inside)
+    if (err) return d.error(err)
+    let [index, name, url] = inside.splits;
+    index = Number(index) - 1
+    if (isNaN(index) || index < 0) d.aoiError.fnError(d, "custom", {inside}, "Invalid Index Provided In")
+    if (!d.embeds[index]) d.embeds[index] = new d.embed()
+    d.embeds[index].setTitle(name.addBrackets());
+
+    if (url && url.trim() !== '') {
+        d.embeds[index].setURL(url.addBrackets());
+    }
+    return {
+        code: d.util.setCode({function: d.func, code, inside}),
+        embeds: d.embeds
+    }
+  }`
+})  
+
+
+//$findChar[abc;2] will return b, it basically like indexOf
+bot.functionManager.createCustomFunction({
+ name: "$dogChar",
+ type: "djs",
+ code: async d => {
+ const data = d.util.openFunc(d)
+ const [char,pos] = data.inside.splits
+ if(!char || isNaN(pos)) {
+ let inside = data.inside
+ d.aoiError.fnError(d,"custom",{ inside },"invalid character or position (position must be valid number)");
+ }
+ else {
+ let r = char.substring(pos-1,pos)
+ data.result = r
+ }
+ return {
+ 
+ code: d.util.setCode(data)
+ 
+ }
+ }
+ 
+}) 
+
+const { GiveawaysManager } = require('discord-giveaways');
+bot.giveawaysManager = new GiveawaysManager(bot, {
+    storage: "./giveaways.json",
+    default: {
+        botsCanWin: false,
+        embedColor: "#1793ff",
+        embedColorEnd: "#EE3C23",
+        reaction: "🎁"
+    }
+})
+
+  //$memberAvatar custom function
+bot.functionManager.createCustomFunction({
+name: "$dogAvatar",
+type: "djs",
+code: async d => {
+const data = d.util.openFunc(d)
+const [guildID = d.guild.id,user = d.author.id] = data.inside.splits
+data.result = d.client.guilds.cache.get(guildID).members.cache.get(user).avatarURL({ size: 2048 })
+return {
+code: d.util.setCode(data)
+}
+}
+}) 
+
+//usage: `$memberAvatar[guild id(optional);user id(optional)]
