@@ -1,7 +1,7 @@
 module.exports = {
     Bot: {
         token: process.env.tommy,
-        prefix: "$getServerVar[prefix]",
+        prefix: ['$getUserVar[tommy_prefix]','dog'],
         intents: "all",
         database: {
             type: "default",

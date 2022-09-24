@@ -17,6 +17,7 @@ module.exports = [{
  ]
 
  $onlyIf[$getChannelVar[snipe_msg;$mentionedChannels[1;yes]]!=;{newEmbed:{description:❌ Nothing to snipe in <#$mentionedChannels[1;yes]>}{color:RED}}]
+$onlyIf[$getServerVar[lockSnipe]==off;{newEmbed: {title:**snipe command off**} {color:RED} {description:hello the server owner disabled snipe command }]
 `
 },{
  type: 'messageDelete',

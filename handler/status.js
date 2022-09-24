@@ -6,7 +6,7 @@ module.exports = (bot) => {
     })
 
     bot.status({
-        text: "playing amongus",
+        text: "bot still on beta",
         type: "PLAYING",
         time: 12
     })

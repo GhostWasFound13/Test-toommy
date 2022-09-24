@@ -1,5 +1,5 @@
 module.exports = {
-    name: "dev-play",
+    name: "play",
     aliases: 'p',
     usage: "play [song name/URL]",
     description: "Plays the given song",
@@ -26,5 +26,6 @@ try {
 } catch (e) {
     message.reply('An error has occured')
 }
-})()]`
+})()]
+`
 }

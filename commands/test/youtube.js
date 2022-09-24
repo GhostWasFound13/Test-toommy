@@ -10,6 +10,6 @@ client.discordTogether.createTogetherCode('$voiceID', 'youtube').then(async invi
  return message.channel.send(invite.code);
  });]
  
- $onlyIf[$voiceID!=;Ingresa a un canal de voz para poder ver **YouTube**!]
+ $onlyIf[$voiceID!=;you need to join a vc to watch to**YouTube**!]
  `
 }

@@ -98,7 +98,7 @@ Lavalink.addNode({
  url: "lava.link:80",
  password: "neo",
  name: "aoi.js",
- secure: false,
+ secure: true,
  })
 
   //BOT JOIN lEAVE SERVER LOGGER

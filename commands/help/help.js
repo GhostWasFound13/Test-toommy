@@ -11,4 +11,5 @@ $thumbnail[1;$userAvatar]
 $addbutton[1;community server;5;https://discord.gg/jdp7ekyhFK;no]
 $addbutton[1;invite bot;5;https://discord.com/api/oauth2/authorize?client_id=886888519799291914&permissions=0&scope=bot;no]
 
-`}
+`
+}

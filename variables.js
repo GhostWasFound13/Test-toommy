@@ -3,8 +3,10 @@ module.exports = {
   XP: "100",
   Bank: "0",
   color: "000000",
-  prefix: "a!", //the prefix boii
+
+  tommy_prefix: "a!", //the prefix boii
   symbol: "$",
+  dogecoin: "0", 
   embed_color: "000000", 
   embedColor: "1",
   bottle: "99",
@@ -194,4 +196,5 @@ type: "0",
     uranium: "0",
     sulphur: "0",
 job: "none",
+  lockSnipe: "off",
 }

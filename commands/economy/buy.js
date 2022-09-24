@@ -2,28 +2,25 @@ module.exports = {
 name: "buy",
 $if: "v4",
 code: `
-$if[$message[1]==trumpet]
+$if[$message[1]==dogecoin]
 $thumbnail[1;$userAvatar[$clientid]]
 $color[1;$getVar[embed_color]]
 $title[1;**Purchase successful**]
-$description[1;**You successfully purchased 1 <:ctumptet:920023394844565604> for 100$getVar[xpsymbol]**]
+$description[1;**You successfully a dogecoin
 
 $setGlobalUserVar[xpt;$sub[$getGlobalUserVar[xpt];100]]
 
-$setGlobalUserVar[trumpet;$sum[$getGlobalUserVar[trumpet];1]]
+$setGlobalUserVar[dogecoin;$sum[$getGlobalUserVar[dogecoin];200000]]
 
 $onlyIf[$checkContains[$message[2];-;\;/;.;,;[;];_;+;$;?;(;);{;};!;@;#;%;^;&;*;|;>;<]==true;Why would you want to buy that just so you know your message can  not conatin the following charactars
 \`\`\`
 - ;\ / . ,  _ +  $  ? ( ) { } ! @ # % ^ & * | > <
 \`\`\`]
-$onlyIf[$getGlobalUserVar[trumpet]<1;**Already purchased this item**]
-$onlyIf[$getGlobalUserVar[xpt]>99;**You dont have enough $getVar[xpsymbol]**]
-$onlyIf[$message[2]>0;**please specify an amount**]
 
 $else
 
 
-$if[$message[1]==bottle]
+$if[$message[1]==dogemedal]
 $thumbnail[1;$userAvatar[$clientid]]
 $color[1;$getVar[embed_color]]
 $title[1;**Purchase successful**]
@@ -31,14 +28,14 @@ $description[1;**You successfully purchased $message[2] <:woterbottle:9200532028
 
 $setGlobalUserVar[Wallet;$sub[$getGlobalUserVar[Wallet];$multi[$message[2];1000]]]
 
-$setGlobalUserVar[wbottle;$sum[$getGlobalUserVar[wbottle];$multi[1;$message[2]]]]
+$setGlobalUserVar[dogemedal;$sum[$getGlobalUserVar[dogemedal];$multi[1;$message[2]]]]
 
 $onlyIf[$checkContains[$message[2];-;\;/;.;,;[;];_;+;$;?;(;);{;};!;@;#;%;^;&;*;|;>;<]==true;Why would you want to buy that just so you know your message can  not conatin the following charactars
 \`\`\`
 - ;\ / . ,  _ +  $  ? ( ) { } ! @ # % ^ & * | > <
 \`\`\`]
 
-$onlyIf[$getGlobalUserVar[Wallet]>$multi[$message[2];999];**You dont have enough $getVar[symbol]**]
+$onlyIf[$getGlobalUserVar[Wallet]>$multi[$message[2];1000000];**You dont have enough $getVar[symbol]**]
 $onlyIf[$message[2]>0;**please specify an amount**
 
 $else

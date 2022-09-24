@@ -53,3 +53,4 @@ client.giveawaysManager.start(giveawayChannel, {
 message.channel.send(\`Giveaway started in \$\{giveawayChannel\}!\`);
 })()]`
 };
+a
