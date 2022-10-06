@@ -245,6 +245,7 @@ emitNewSongOnly: false,
 // :/
 bot.variables(require(`./variables/variables.js`))
 
+
 bot.onJoin()
 bot.onMessage()
 bot.onInteractionCreate()

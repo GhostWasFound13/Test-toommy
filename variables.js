@@ -1,5 +1,4 @@
 module.exports = {
-  
   //Customize Property For Message
   pause: "⏸️ Paused.",
   resume: "▶️ Resumed!",
