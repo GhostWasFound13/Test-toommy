@@ -327,10 +327,10 @@ $color[1;RANDOM]`
 })
 bot.onGuildLeave() 
 
-bot.customFunctions = {
-     djs : new bot.cacheManager.Group() ,
-     'aoi.js' : new bot.cacheManager.Group() 
-}
+//bot.customFunctions = {
+    // djs : new bot.cacheManager.Group() ,
+   //  'aoi.js' : new bot.cacheManager.Group() 
+//}
 
 //tired of using $findUser?
 
@@ -386,17 +386,16 @@ bot.functionManager.createCustomFunction({
  }
  
 }) 
-
-const { GiveawaysManager } = require('discord-giveaways');
-bot.giveawaysManager = new GiveawaysManager(bot, {
-    storage: "./giveaways.json",
-    default: {
-        botsCanWin: false,
-        embedColor: "#1793ff",
-        embedColorEnd: "#EE3C23",
-        reaction: "🎁"
-    }
-})
+//const { GiveawaysManager } = require('discord-giveaways');
+//bot.giveawaysManager = new GiveawaysManager(bot, {
+   // storage: "./giveaways.json",
+    //default: {
+       // botsCanWin: false,
+      //  embedColor: "#1793ff",
+       // embedColorEnd: "#EE3C23",
+    //reaction: "🎁"
+    //}
+//})
 
   //$memberAvatar custom function
 bot.functionManager.createCustomFunction({
