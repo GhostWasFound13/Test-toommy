@@ -8,7 +8,7 @@ mobilePlatform: true,
 database: {
     db: require("dbdjs.db"),
     type: "dbdjs.db",
-    path: "./database/",
+    path: "./database1/",
     tables: ["main"]
   }
 })
@@ -60,7 +60,7 @@ const voice = new Aoijs.Voice(bot, {
     enabled: true
   },
   soundcloud: {
-    clientId: "your clientid",
+    clientId: "iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX",
     likeTrackLimit: 200
   },
   playerOptions: {
