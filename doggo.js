@@ -1,5 +1,6 @@
 const Aoijs = require("aoi.js")
- 
+ const { Panel } = require("@akarui/aoi.panel");
+
 const bot = new Aoijs.Bot({
 token: process.env.tommy, 
 prefix: "dead", //<- Change whatever with your prefix//
@@ -294,7 +295,7 @@ emitNewSongOnly: false,
 //bot.variables(variables)
 //*
 //require('./handler/DistubeEvents')(bot)
-//require('./handler/status')(bot)
+require('./handler/status')(bot)
 
 //require('./handler/functions')(bot)
 //require("./handler/pathToHandlerFile.js"); not working
@@ -319,26 +320,40 @@ await loader.load(bot.cmd, "./commands/")
 
 loader.setColors( loader.themes.default );
 //server host
-const keepAlive = require('./server.js')
-const express = require('express');
-const app = express();
 
-app.get('/', (req, res) => {
-	res.sendFile('invite.html', {root: __dirname })
-});
+// const keepAlive = require('./server.js')
+//const express = require('express');
+//const app = express();
+//
+//app.get('/', (req, res) => {
+	//res.sendFile('invite.html', {root: __dirname })
+//*);
 
-app.get('/invite', (req, res) => {
-	res.sendFile('server.html', {root: __dirname })
-});
+//app.get('/invite', (req, res) => {
+//	res.sendFile('server.html', {root: __dirname })
+//});
 
-app.listen(3000, () => {
-	console.log('Server started');
-});
+//app.listen(3000, () => {
+	//console.log('Server started');
+//});
 
 //role Commands
  
 
+//aoi panel
+const PanelObject = new Panel({
+	username: "GhostWasfound",
+	password: "MrGhostBG",
+	secret: "aoijs", // Just write whatever the fuck you want <3
+	port: 3000,
+	bot,
+	mainFile: "doggo.js",
+	commands: "Commands"
+});
 
+// Panel events
+PanelObject.loadPanel();
+PanelObject.onError();
 
 //events.//*
 //*const files = fs.readdirSync('./events').filter(file => file.endsWith('.js'))
