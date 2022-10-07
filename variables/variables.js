@@ -272,4 +272,7 @@ type: "0",
     sulphur: "0",
 job: "none",
   lockSnipe: "off",
+  verify_id: '',
+math: '',
+verify: 'false'
 }

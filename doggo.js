@@ -68,6 +68,66 @@ const voice = new Aoijs.Voice(bot, {
 },
 }); 
 
+  bot.command({
+       name: "nowplaying",
+       aliases: "np",
+       code: `$author[1;Now playing;https://cdn.discordapp.com/emojis/729630163750354955.gif?size=1024]
+       $title[1;$songInfo[title]]
+       $description[1;$addField[Duration;$songInfo[duration]]
+       $addField[1;URL;$songInfo[url]]]
+       $footer[1;$botPingms to load it.]
+       $thumbnail[1;$songInfo[thumbnail]]
+       $color[1;a09fff]
+       $onlyIf[$queueLength!=0;Nothing song was playing.]
+       $onlyIf[$voiceID!=;You need to join the voice channel first!]
+    
+
+` 
+})
+
+
+bot.command({
+  name: "join",
+  code: `
+ Successfully joined <#$voiceid[$authorid]>
+ $joinVC[$voiceid[$authorid]]
+ $onlyif[$voiceid[$clientid]==;:x: Someone is listening to songs in another Voice Channel\nEither join their Voice Channel or use this command later.]
+ $onlyIf[$voiceid[$authorid]!=;:x: Please join a Voice Channel and use this command.]
+`
+});
+ 
+ bot.command({
+ name: "command",
+ aliases: ['cmd'],
+ description: "Know information about a specific command",
+ usage: "command <command name>",
+ cooldown: '3s',
+ code:
+ `
+$author[1;$toLocaleUppercase[$commandInfo[$message[1];name]] Command;$userAvatar[$clientID];https://dsc.gg/v!per]
+$cooldown[$commandInfo[command;cooldown];{newEmbed:{description::c_s: Wait for %time% to try again!}{color:RED}}]
+$color[1;$getVar[color]]
+
+$description[1;**Aliases:**
+\`- $toLocaleUpperCase[$replaceText[$replaceText[$checkCondition[$commandInfo[$message[1];aliases]!=];true;$replaceText[$commandInfo[$message[1];aliases];,; | ]];false;None]]\`
+
+**Description:**
+\`- $replaceText[$replaceText[$checkCondition[$commandInfo[$message[1];description]!=];true;$commandInfo[$message[1];description]];false;None]\`
+
+**Usage:**
+\`- $getServerVar[prefix]$replaceText[$replaceText[$checkCondition[$commandInfo[$message[1];usage]!=];true;$commandInfo[$message[1];usage]];false;None]\`
+
+**Cooldown:**
+\`- $toLocaleUpperCase[$replaceText[$replaceText[$checkCondition[$commandInfo[$message[1];cooldown]!=];true;$commandInfo[$message[1];cooldown]];false;None]]\`]
+
+$footer[1;<> = Required | () = Optional;$authorAvatar]
+ $onlyIf[$commandInfo[$message[1];name]!=;{newEmbed:{description: Command Not Found}{color:#ff0000}}]
+ $onlyIf[$message!=;{newEmbed:{description: Invalid Args
+Usage:
+\`cmd <cmd name>\`}{color:#ff0000}}]`
+});
+
+
 voice.onTrackStart()
 
 voice.trackStartCommand({
