@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { disable
   name: "work", 
   category: "economy", 
 code: `$setGlobalUserVar[Wallet;$sum[$getGlobalUserVar[Wallet;$authorID];$random[4500;10000]];$authorID]

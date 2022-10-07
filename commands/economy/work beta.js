@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { L
 name: "work",
 $if: "v4",
 code: `
