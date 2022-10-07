@@ -24,7 +24,7 @@ module.exports = {
 
   //Changing Other
   color: "a09fff",
-  channelstatus: "", //Optional (channelid), for send ready message
+  channelstatus: "1025646265129783397", //Optional (channelid), for send ready message
   vol: "50", //Default Volume
   maxvol: "150", //Max Volume
 
