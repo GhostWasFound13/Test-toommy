@@ -23,7 +23,16 @@ bot.status({
 //Callbacks
 //bot.onMessage()
 bot.onInteractionCreate()
-
+bot.readyCommand({
+  channel: "$getVar[channelstatus]",
+  $if: "v4",
+  code: `$log[#new tommy bot made by ShadowYtLol
+  $userTag[$clientID] has logging to discord]
+  $log[command count:$commandCount
+ uptime: $uptime
+ping: $pingms
+cpu $cpu/100]`,
+})
 bot.readyCommand({
  channel: "$getVar[channelstatus]",
  $if: "v4",
@@ -342,8 +351,8 @@ loader.setColors( loader.themes.default );
 
 //aoi panel
 const PanelObject = new Panel({
-	username: "GhostWasfound",
-	password: "MrGhostBG",
+	username: process.env.username,
+	password: process.env.password,
 	secret: "aoijs", // Just write whatever the fuck you want <3
 	port: 3000,
 	bot,
