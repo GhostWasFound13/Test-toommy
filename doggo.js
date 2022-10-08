@@ -28,7 +28,7 @@ bot.readyCommand({
   $if: "v4",
   code: `$log[#new tommy bot made by ShadowYtLol
   $userTag[$clientID] has logging to discord]
-  $log[command count:$commandCount
+  $log[command count:$commandsCount
  uptime: $uptime
 ping: $pingms
 cpu $cpu/100]`,
@@ -77,6 +77,16 @@ const voice = new Aoijs.Voice(bot, {
  trackInfoInterval: 150
 },
 }); 
+
+//const app = panel.app;
+//app.get("/somenewpagename_which_is_not_already_used", (req,res) =>{
+  //let a = panel.isLoggedIn(req, res);
+  //if(a==false){
+//  res.redirect("/")//}
+  //else {
+  //  res.send("<html><head><title>Aoi.panel</title></head><body>Aoi.panel is cool ngl.</body></html>")
+ // }
+//})
 
   bot.command({
        name: "nowplaying",
@@ -351,13 +361,13 @@ loader.setColors( loader.themes.default );
 
 //aoi panel
 const PanelObject = new Panel({
-	username: process.env.username,
+	username: "Ghostwasfound",
 	password: process.env.password,
 	secret: "aoijs", // Just write whatever the fuck you want <3
 	port: 3000,
 	bot,
 	mainFile: "doggo.js",
-	commands: "Commands"
+	commands: "commands"
 });
 
 // Panel events
