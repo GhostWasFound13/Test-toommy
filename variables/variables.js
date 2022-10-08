@@ -274,5 +274,8 @@ job: "none",
   lockSnipe: "off",
   verify_id: '',
 math: '',
-verify: 'false'
+verify: 'false',
+  ecobl: "false",
+eco: "off",
+  error: "error somethibg went wrong"
 }
