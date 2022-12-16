@@ -1,36 +1,19 @@
 # New-Tommy-bot
 This is  not project :) 
 
-Tommy bot source code only for. Dev only. 
+Open source
+changed the projectCode Folder to command
+And removed the command folder 
+Dont forget add help command ...
+i make this source code for 1 year after doing it
 
-tomny bot source code made by lolshadow
-tommy bot source still more update for now :)
+Source code by GhostWasFound12
+the source code was open source from githbReplit
 
-# command 
-over 134 command
-# giveway command
-# fun command list
+the bot totally auto offline and online idk
+To fix it its old code
 
-smart do (user)
+I use aoi.js
 
-marry (choose someone to marry :/)
-
-8ball (ask question to the 8ball)
-
-# econonmy command
-
-# music command
-play (any music)
-
-loop (the  music)
-
-nowplaying (totally replay the music)
-
-stop (stopping the music)
-
-filter (any filter your want)
-# decsripiton
-still on beta test
-bot totally going to unactive 
-but sometime the bot totally active by himself
-# credits to lolShadowLOL
+final message
+I quit discord...
